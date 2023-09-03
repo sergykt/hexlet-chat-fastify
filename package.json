@@ -8,7 +8,7 @@
     "start-server": "./bin/index.js"
   },
   "scripts": {
-    "start": "npx fastify start src/plugin.js -l info -P -a 0.0.0.0 -p 5001"
+    "start": "node ./bin/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -30,5 +30,8 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.5.3",
     "jest": "^28.1.2"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
