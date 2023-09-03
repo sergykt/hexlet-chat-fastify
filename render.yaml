@@ -5,4 +5,4 @@ services:
     plan: free
     autoDeploy: false
     buildCommand: npm install
-    startCommand: node ./src/index.js
+    startCommand: node ./bin/index.js
