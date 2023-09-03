@@ -39,13 +39,15 @@ export default async (app, options = { staticPath: 'build' }) => {
   setUpAuth(app);
   setUpStaticAssets(app, options.staticPath);
 
+  const allowedOrigins = ['https://hexlet-chat-eight.vercel.app', 'http://localhost:3000'];
+
   app.register(cors, {
-    origin: 'https://hexlet-chat-eight.vercel.app',
+    origin: allowedOrigins,
   });
 
   await app.register(fastifySocketIo, {
     cors: {
-      origin: 'https://hexlet-chat-eight.vercel.app',
+      origin: allowedOrigins,
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
     },
   });
