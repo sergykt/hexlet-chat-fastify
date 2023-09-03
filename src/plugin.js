@@ -43,7 +43,12 @@ export default async (app, options = { staticPath: 'build' }) => {
     origin: 'https://hexlet-chat-eight.vercel.app',
   });
 
-  await app.register(fastifySocketIo);
+  await app.register(fastifySocketIo, {
+    cors: {
+      origin: 'https://hexlet-chat-eight.vercel.app',
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+    },
+  });
   addRoutes(app, options?.state || {});
 
   return app;
