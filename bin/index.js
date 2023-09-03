@@ -2,7 +2,7 @@
 
 import path from 'path';
 import Fastify from 'fastify';
-import cors from '@fastify/cors'
+
 import { program } from 'commander';
 import plugin from '../src/plugin.js';
 
@@ -21,10 +21,6 @@ const options = program.opts();
 
 const fastify = Fastify({
   logger: true,
-});
-
-fastify.register(cors, {
-  origin: 'https://hexlet-chat-eight.vercel.app',
 });
 
 const start = async () => {

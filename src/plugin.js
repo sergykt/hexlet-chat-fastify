@@ -4,6 +4,7 @@ import fastifySocketIo from 'fastify-socket.io';
 import fastifyStatic from '@fastify/static';
 import fastifyJWT from '@fastify/jwt';
 import HttpErrors from 'http-errors';
+import cors from '@fastify/cors'
 
 import addRoutes from './routes.js';
 
@@ -37,6 +38,11 @@ const setUpAuth = (app) => {
 export default async (app, options = { staticPath: 'build' }) => {
   setUpAuth(app);
   setUpStaticAssets(app, options.staticPath);
+
+  app.register(cors, {
+    origin: 'https://hexlet-chat-eight.vercel.app',
+  });
+
   await app.register(fastifySocketIo);
   addRoutes(app, options?.state || {});
 
