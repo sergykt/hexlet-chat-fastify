@@ -4,7 +4,7 @@ import fastifySocketIo from 'fastify-socket.io';
 import fastifyStatic from '@fastify/static';
 import fastifyJWT from '@fastify/jwt';
 import HttpErrors from 'http-errors';
-import cors from '@fastify/cors'
+import cors from '@fastify/cors';
 
 import addRoutes from './routes.js';
 

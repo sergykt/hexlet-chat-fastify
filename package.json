@@ -1,5 +1,5 @@
 {
-  "name": "@hexlet/chat-server",
+  "name": "hexlet-chat-server-custom",
   "version": "1.1.8",
   "description": "",
   "main": "plugin.js",
